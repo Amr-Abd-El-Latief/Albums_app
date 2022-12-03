@@ -1,42 +1,8 @@
 .App {
   text-align: center;
+  background-color: #e3e1e1;
 }
 
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-
-/* Style the header */
-header {
-  background-color: #000000;
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: white;
-}
-
-/* styling the buttons row */
-.menu-buttons-container{
-  background-color: #000000;
-  padding: 20px;
-  text-align: center;
-  font-size: 20px;
-  color: #23941c;
-}
-
-/* Style the footer */
-footer {
-  background-color: #777;
-  padding: 10px;
-  text-align: center;
-  color: white;
-}

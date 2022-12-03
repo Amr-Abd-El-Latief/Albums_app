@@ -1,0 +1,43 @@
+
+/* albums grid */
+
+.albums-grid {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .albums-grid li {
+    padding: 10px 15px;
+    text-align:center;
+  }
+
+  .albums-grid ul {
+ 
+    list-style-type: none;
+}
+
+
+@media screen and (min-width: 769px) {
+
+  ul {
+    columns: 4;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) { 
+  
+  ul {
+    columns: 2;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+
+  ul {
+    columns: 1;
+  }
+}
