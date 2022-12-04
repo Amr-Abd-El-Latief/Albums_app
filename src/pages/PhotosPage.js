@@ -1,7 +1,7 @@
 
-import Header from '../app-components/header/Header';
-import Footer from '../app-components/footer/Footer';
-import PhotosGrid from '../app-components/photos-grid/PhotosGrid';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
+import PhotosGrid from '../components/photos-grid/PhotosGrid';
 
 function PhotosPage({photos,ownerData}) {
   console.log("Photos page  albums : " + JSON.stringify(photos));

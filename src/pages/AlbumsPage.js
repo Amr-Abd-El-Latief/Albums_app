@@ -1,8 +1,8 @@
 
 import './AlbumsPage.css';
-import AlbumsGrid from '../app-components/albums-grid/AlbumsGrid';
-import Header from '../app-components/header/Header';
-import Footer from '../app-components/footer/Footer';
+import AlbumsGrid from '../components/albums-grid/AlbumsGrid';
+import Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 
 function AlbumsPage({albums,users}) {
   console.log("albums page  albums : " + JSON.stringify(albums));

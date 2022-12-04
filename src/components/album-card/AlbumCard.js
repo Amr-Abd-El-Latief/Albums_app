@@ -18,7 +18,7 @@ style={{
 
 }}
 ></img>
-  <div className="container">
+  <div className="text-container">
     <h4><b>{album.title}</b></h4> 
     <hr />
     <a>{album.url}</a> 

@@ -10,12 +10,7 @@ function Header() {
             <header>
                 <h2>Albums</h2>
             </header>
-            <div className='menu-buttons-container'>
 
-                <Link to="/albums">
-                    Albums
-                </Link>
-            </div>
         </div>
     );
 }

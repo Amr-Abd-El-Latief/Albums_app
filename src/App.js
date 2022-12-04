@@ -1,20 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
 import { useState, useEffect } from "react";
 
 import * as AlbumsApi from './Apis/AlbumsAPI';
 import * as UsersApi from './Apis/UsersAPI';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AlbumsPage from './pages/AlbumsPage';
 import PhotosPage from './pages/PhotosPage';
-import NotFound from './NotFound'
-import LandingPage from './pages/landing-page';
+import NotFound from './NotFound';
+import AlbumsSpinner from './components/albums-spinner/AlbumsSpinner';
 function App() {
   let albumsList = [];
   let usersList = [];
   let photosList = [];
   const [albums, setAlbums] = useState([...albumsList])
   const [users, setUsers] = useState([...albumsList])
+  let showSpinner = false;
   // const [photos, setPhotos] = useState([...photosList])
 
   let photos = [
@@ -55,12 +56,25 @@ function App() {
     }
   ]
   useEffect(() => {
+
     const getAlbums = async () => {
-      const res = await AlbumsApi.getAll();
-      const validatedRes = Array.isArray(res) ? res : [];
-      console.log("from outside Albums : " + JSON.stringify(res))
-      setAlbums([...validatedRes]);
-      console.log("from outside Albums : " + JSON.stringify(albums))
+      try {
+        showSpinner = true;
+        const res = await AlbumsApi.getAll();
+        showSpinner = false;
+        const validatedRes = Array.isArray(res) ? res : [];
+        // console.log("from outside Albums : " + JSON.stringify(res))
+        setAlbums([...validatedRes]);
+        // console.log("from outside Albums : " + JSON.stringify(albums))
+        if (!Array.isArray(res)) {
+          alert(`Error!, Error in getting Albums from Server, status: ${JSON.stringify(res)}`)
+          throw new Error(`Error! status: ${res.status}`);
+
+        }
+
+      } catch (err) {
+        console.log(err);
+      }
 
     }
     getAlbums();
@@ -68,32 +82,42 @@ function App() {
 
   useEffect(() => {
     const getUsers = async () => {
-      const res = await UsersApi.getAll();
-      const validatedRes = Array.isArray(res) ? res : [];
-      console.log("from outside Users : " + JSON.stringify(res))
-      setUsers([...validatedRes]);
-      console.log("from outside Users : " + JSON.stringify(users))
+      try {
+        const res = await UsersApi.getAll();
+        const validatedRes = Array.isArray(res) ? res : [];
+        //  console.log("from outside Users : " + JSON.stringify(res))
+        setUsers([...validatedRes]);
+        //  console.log("from outside Users : " + JSON.stringify(users))
+        if (!Array.isArray(res)) {
+          alert(`Error!, Error in getting users from Server, status: ${JSON.stringify(res)}`)
+          throw new Error(`Error! status: ${res.status}`);
 
+        }
+      } catch (err) {
+        console.log(err);
+      }
     }
     getUsers();
   }, [])
 
-  let ownerData = {albumOwner:"Amr",albumTitle:"best album"}
+  let ownerData = { albumOwner: "Amr", albumTitle: "best album" }
 
   return (
 
     <BrowserRouter>
 
       <div className="App">
+        {showSpinner && <AlbumsSpinner />}
+
         <Routes>
-        <Route path="/"   element={<LandingPage />} />
-          <Route path="/albums"   element={<AlbumsPage albums={albums} users={users}  />} />
-          <Route path="/photos"   element={<PhotosPage photos={photos} ownerData={ownerData}  />} />
+          {/* <Route path="/"   element={<LandingPage />} /> */}
+          <Route path="/" element={<AlbumsPage albums={albums} users={users} />} />
+          <Route path="/photos" element={<PhotosPage photos={photos} ownerData={ownerData} />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>
 
-  
+
       </div>
 
     </BrowserRouter>
