@@ -4,7 +4,7 @@ import './AlbumsSpinner.css';
 function AlbumsSpinner({albums,users}) {
 
   return (
-     <div class="loader"></div>
+     <div className="loader"></div>
   );
 }
 

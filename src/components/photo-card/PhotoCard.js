@@ -13,7 +13,6 @@ function PhotosCard({ photo, ownerData }) {
    */
   const handleCardClick = (photo, ownerData) => {
     setIsOpen(true)
-    //alert("photoLink : " + photoLink)
 
   }
   return (
@@ -38,7 +37,7 @@ function PhotosCard({ photo, ownerData }) {
         </div>
 
       </a>
-      {isOpen && <PhotoModal setIsOpen={setIsOpen} />}
+      {isOpen && <PhotoModal isOpen={isOpen}  photo = {photo} ownerData={ownerData}/>}
     </div>
   );
 }
