@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Albums App 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Albums is an application for showing Albums with cover of each album, and if you choose certain album, you can see many photos related to this Album, with Album owner name.
 
-## Available Scripts
 
-In the project directory, you can run:
+## how to setup
 
-### `npm start`
+    -	Using docker:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+            1-	Reach by terminal to the app main folder besides the package.json file
+            2-	Run command: docker build -t albums .
+            3-	Run Command: docker images
+            And make sure image name exist and running
+            4-	In terminal run the command:
+            docker run -d -p 8092:3000   --name albums-app albums 
+            5-	It should be running on port 3000
+            
+    -	 Using terminal:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+            1-	Reach by terminal to the app main folder besides the package.json file
+            2-	Run in the terminal:    npm install 
+            3-	After terminal finishes installing the application libraries, run command: npm start
+            4-	Application would be in the link: http://localhost:3000/
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Used Libraries
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        1-	Reactjs
+        2-	Bootstrap
+        3-	Jest
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Used Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+        1-	react-js-pagination
+        2-	react-modal
