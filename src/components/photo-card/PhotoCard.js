@@ -31,7 +31,7 @@ function PhotosCard({ photo, ownerData }) {
           }}
         ></img>
         <div className="text-container">
-          <h4><b>Title: {photo.title}</b></h4>
+          <div title={photo.title}><h4 >Photo Title: <p>{photo.title ? photo.title : 'No data for Photo title'}</p></h4></div>
         </div>
 
       </a>

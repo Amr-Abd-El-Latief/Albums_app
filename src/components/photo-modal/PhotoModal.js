@@ -57,11 +57,9 @@ function PhotoModal({ isOpen, photo, ownerData }) {
                         }}
                     ></img>
                     <div className="text-container">
-                        <h4><b>Title: {photo.title}</b></h4>
-                        <br />
-                        <h4><b>Owner: {ownerData.albumOwner}</b></h4>
-                        <br />
-                        <h4><b>Owner: {ownerData.albumOwner}</b></h4>
+                        <div title={photo.title}><b>Photo Title: {photo.title}</b></div>
+                        <div title={ownerData.albumOwner}> <b>Photo Owner: {ownerData.albumOwner}</b></div>
+                        <div title={ownerData.albumTitle}> <b>Album Title: {ownerData.albumTitle}</b></div>
                     </div>
 
 

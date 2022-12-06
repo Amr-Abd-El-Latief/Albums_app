@@ -13,7 +13,7 @@ function AlbumsGrid({ albums, users, albumClickinPage }) {
 
       <ul className="albums-grid">
 
-        {albums.length > 0 && albums?.map((album) => <li key={album.id}> <AlbumCard album={album} users={users} albumClickinGrid={handleAlbumClickinGrid}  /> </li>)}
+        {albums.length > 0 && albums?.map((album) => <li key={album.id}> <AlbumCard album={album} user={users} albumClickinGrid={handleAlbumClickinGrid}  /> </li>)}
       </ul>
       {albums.length <= 0 && <h1>Unfortunately, No Albums are Currently Available
       </h1>}

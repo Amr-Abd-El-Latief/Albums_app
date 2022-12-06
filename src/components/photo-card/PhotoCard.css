@@ -12,8 +12,15 @@
   
   .text-container {
     padding: 2px 16px;
-    word-wrap: break-word;
-    max-width: fit-content;
+
+  }
+
+
+  .text-container p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 40ch;
   }
 
   .photo-card-image{
