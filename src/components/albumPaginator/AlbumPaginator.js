@@ -16,7 +16,6 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
      */
     const handlePrevClick= ()=>{
         currentPageHandler('prev');
-        //setCurrentPage((prev)=>currentPage<=1?0:prev-1);
         startHandler((countPerPage*currentPage) - countPerPage);
         limit = start + countPerPage;
         handlePaginatorClick(start,limit);
@@ -28,14 +27,8 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
      */
     const handleNextClick= ()=>{
         currentPageHandler('next');
-        // setCurrentPage((prev)=>{
-        //     alert(prev)
-        //     return (prev+1)});
-        alert("currentPage : > "+currentPage)
         startHandler(countPerPage*currentPage+1);
         limit = start + countPerPage;
-        alert("start : > "+start + "countPerPage :>" +countPerPage)
-
         handlePaginatorClick(start,limit);
     }
 
@@ -59,7 +52,7 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
                         50
                     </option>
 
-                </select> -- "countPerPage: " {countPerPage}   -- "currentPage ":{currentPage }   -- "start: "{start}
+                </select> -- {countPerPage} --
             </div>
             <div className='paginator-button'>
             <button onClick={handleNextClick}> Next </button>

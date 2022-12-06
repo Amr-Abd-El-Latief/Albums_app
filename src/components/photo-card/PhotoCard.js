@@ -18,7 +18,7 @@ function PhotosCard({ photo, ownerData }) {
     <div className="photo-card">
       <a onClick={() => handleCardClick(photo, ownerData)}>
         <img
-
+      
           className="photo-card-image"
 
           style={{
@@ -26,7 +26,7 @@ function PhotosCard({ photo, ownerData }) {
               `url(${photo?.thumbnailUrl})`,
             width: 300,
             height: 193,
-            margin: 10
+            margin: 10,
 
           }}
         ></img>
