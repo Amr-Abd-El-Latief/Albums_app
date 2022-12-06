@@ -1,8 +1,5 @@
 const photosApi = "https://jsonplaceholder.typicode.com";
 
-let token = localStorage.token;
-
-
 const headers = {
   Accept: "application/json",
 };

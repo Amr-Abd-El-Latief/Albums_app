@@ -1,6 +1,5 @@
 import './PhotoModal.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 
@@ -18,9 +17,9 @@ const customStyles = {
 
 function PhotoModal({ isOpen, photo, ownerData }) {
     const [modalIsOpen, setIsOpen] = React.useState(true);
-    function openModal() {
-        setIsOpen(isOpen);
-    }
+    // function openModal() {
+    //     setIsOpen(isOpen);
+    // }
 
     function afterOpenModal() {
         

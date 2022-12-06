@@ -65,28 +65,6 @@ function App() {
     getAlbums();
   }, [])
 
-  /**
- * function to get all the users from the users Api 
- */
-   const getUsers = async () => {
-    try {
-      const res = await UsersApi.getAll();
-      const validatedRes = Array.isArray(res) ? res : [];
-
-      setUsers([...validatedRes]);
-      if(users.length>0){
-        setAlbums(addUserNames([...albums], users));
-
-      }
-      if (!Array.isArray(res)) {
-        console.log(`Error!, Error in getting users from Server, status: ${JSON.stringify(res)}`)
-        throw new Error(`Error! status: ${res.status}`);
-
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  }
   useEffect(() => {
     const getUsers = async () => {
       try {
@@ -142,34 +120,35 @@ function App() {
 
 
   /**
+   * @Todo to be removed or enhanced and used
    * function to get user owner of the album and add its data to the album object to use it 
    * in the app
    * @param {*} albums  list of albums brought from the api
    * @param {*} users list of users brought from the api
    * @returns 
    */
-  const addUserNames = (albums, users) => {
-    let albumsWithUsers = [...albums];
-    alert("album: " + JSON.stringify(albums) + " users : " + JSON.stringify(users))
+  // const addUserNames = (albums, users) => {
+  //   let albumsWithUsers = [...albums];
+  //   alert("album: " + JSON.stringify(albums) + " users : " + JSON.stringify(users))
 
-    albumsWithUsers = albumsWithUsers.map((a) => {
-       alert("album: " + JSON.stringify(a) + " users : " + JSON.stringify(users))
-      let userData;
-      userData = users.filter(u => {
-        if (a.userId === u.id) {
-          return u;
-        }
+  //   albumsWithUsers = albumsWithUsers.map((a) => {
+  //      alert("album: " + JSON.stringify(a) + " users : " + JSON.stringify(users))
+  //     let userData;
+  //     userData = users.filter(u => {
+  //       if (a.userId === u.id) {
+  //         return u;
+  //       }
 
-      }
-      );
+  //     }
+  //     );
 
-      // alert("userData  > " + JSON.stringify(userData));
-      return a;
-      //  return userData? Object.assign({...a},{albumOwner:userData}):Object.assign({...a},{albumOwner:'No Owner data'})
-    })
-    return albumsWithUsers;
+  //     // alert("userData  > " + JSON.stringify(userData));
+  //     return a;
+  //     //  return userData? Object.assign({...a},{albumOwner:userData}):Object.assign({...a},{albumOwner:'No Owner data'})
+  //   })
+  //   return albumsWithUsers;
 
-  }
+  // }
 
 
   /**
