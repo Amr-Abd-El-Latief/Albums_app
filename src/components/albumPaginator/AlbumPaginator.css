@@ -1,0 +1,34 @@
+.paginator {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(---darkGray);
+    max-width: 100%;
+    background-color: var(--footer-background);
+
+}
+
+.paginator-button {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+button {
+    background-color: var(--primary-green);
+    width: 50%;
+    height: 2rem;
+    border-block-color: var(--primary-green);
+    margin: 0.5rem;
+}
+
+select {
+    /* background-color: var(--primary-green);*/
+    width: 50%;
+    height: 2rem;
+    /* border-block-color: var(--primary-green);*/
+    margin: 0.5rem;
+
+}

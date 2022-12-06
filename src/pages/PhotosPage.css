@@ -4,3 +4,9 @@
     justify-content: center;
     margin: 1rem;
 }
+.photos-page-title{
+    background-color: var(--footer-background);
+    color: var(--primary-green);
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

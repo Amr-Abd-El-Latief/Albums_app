@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import './AlbumCard.css';
 
 function AlbumCard({album, albumClickinGrid}) {
-  // console.log("card album: "+ JSON.stringify(album));
-  let albumId = {...album};
   const [albumCopy, setAlbumCopy] = useState({...album});
+  let albumId = React.useMemo(()=>{return {...album}},[]);
 
   const handleCardClick = (album) => {
-    setAlbumCopy(album)
+    setAlbumCopy(albumId)
     albumClickinGrid(albumCopy)
 
   }

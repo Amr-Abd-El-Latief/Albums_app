@@ -3,8 +3,7 @@ import { useState } from 'react';
 import PhotoModal
  from '../photo-modal/PhotoModal';
 function PhotosCard({ photo, ownerData }) {
-  console.log("card photo: " + JSON.stringify(photo))
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false); 
 
   /**
    * function to open the modal of the photo
@@ -32,8 +31,7 @@ function PhotosCard({ photo, ownerData }) {
           }}
         ></img>
         <div className="text-container">
-          <h4><b>{photo.title}</b></h4>
-
+          <h4><b>Title: {photo.title}</b></h4>
         </div>
 
       </a>

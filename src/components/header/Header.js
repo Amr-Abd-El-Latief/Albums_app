@@ -1,12 +1,10 @@
 
 
 import './Header.css';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
 
 function Header() {
     return (
-        <div>
+        <div data-testid="header-1">
             <header>
                 <h2>Albums</h2>
             </header>

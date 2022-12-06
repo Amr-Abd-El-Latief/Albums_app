@@ -2,9 +2,7 @@
 import './PhotosGrid.css';
 import PhotoCard from '../photo-card/PhotoCard';
 
-
 function PhotosGrid({photos,ownerData}) {
-  console.log("Grid page  photos : " + JSON.stringify(photos));
   return (
     <div className="photos-grid">
 

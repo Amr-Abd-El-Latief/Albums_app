@@ -1,6 +1,5 @@
 
 import './AlbumsSpinner.css';
-
 function AlbumsSpinner({albums,users}) {
 
   return (

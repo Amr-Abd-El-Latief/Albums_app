@@ -1,23 +1,14 @@
 /* Style the header */
 header {
-    background-color: #000000;
+    background-color: var(--header-black);
     padding: 30px;
     text-align: center;
     font-size: 35px;
-    color: #2fe91f;
+    color: var(--primary-green);
 
   }
   h2 {
     margin-top: 10px;
     margin-bottom: 0px;
     }
-  
-  /* styling the buttons row */
-  .menu-buttons-container{
-    background-color: #000000;
-    padding: 20px;
-    text-align: center;
-    font-size: 20px;
-    color: #23941c;
-  }
   

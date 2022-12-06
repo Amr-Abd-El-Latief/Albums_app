@@ -17,15 +17,13 @@ const customStyles = {
 
 
 function PhotoModal({ isOpen, photo, ownerData }) {
-
     const [modalIsOpen, setIsOpen] = React.useState(true);
-
     function openModal() {
         setIsOpen(isOpen);
     }
 
     function afterOpenModal() {
-        // subtitle.style.color = '#f00';
+        
     }
 
     function closeModal() {
@@ -59,10 +57,11 @@ function PhotoModal({ isOpen, photo, ownerData }) {
                         }}
                     ></img>
                     <div className="text-container">
-                        <h4><b>{photo.title}</b></h4>
-                        <hr />
-                        <h4><b>{ownerData.albumOwner}</b></h4>
-
+                        <h4><b>Title: {photo.title}</b></h4>
+                        <br />
+                        <h4><b>Owner: {ownerData.albumOwner}</b></h4>
+                        <br />
+                        <h4><b>Owner: {ownerData.albumOwner}</b></h4>
                     </div>
 
 
