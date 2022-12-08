@@ -198,7 +198,7 @@ function App() {
   const albumClickhandler = async (album) => {
     try {
       setShowSpinner(true);
-      const res = await photosApi.get(album.id, 1, 5);
+      const res = await photosApi.get(album.id, 1, 20);
 
       const validatedRes = Array.isArray(res) ? res : [];
       setPhotos([...validatedRes]);

@@ -9,11 +9,9 @@ function AlbumsGrid({ albums, users, albumClickinPage }) {
     albumClickinPage(album)
   }
   return (
-    <div className="albums-grid">
-
+    <div    data-testid='album-grid-1'>
       <ul className="albums-grid">
-
-        {albums.length > 0 && albums?.map((album) => <li key={album.id}> <AlbumCard album={album} user={users} albumClickinGrid={handleAlbumClickinGrid}  /> </li>)}
+        {albums.length > 0 && albums?.map((album) => <li key={album.id}> <AlbumCard album={album} user={[...users].length > 0 ? users.filter(a => a.id === album.id)[0] : {userName : 'No Data for Owner'}} albumClickinGrid={handleAlbumClickinGrid}  /> </li>)}
       </ul>
       {albums.length <= 0 && <h1>Unfortunately, No Albums are Currently Available
       </h1>}

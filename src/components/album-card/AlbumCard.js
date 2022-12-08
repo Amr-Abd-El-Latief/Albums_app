@@ -2,28 +2,21 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './AlbumCard.css';
 
-function AlbumCard({ album, albumClickinGrid, user }) {
+function AlbumCard({ album, user, albumClickinGrid }) {
   const [albumCopy, setAlbumCopy] = useState({ ...album });
-  // const [user, setUser] = useState({});
   let albumId = React.useMemo(() => { return { ...album } }, []);
-  // alert("users card> " + JSON.stringify(users));
-
-  // const setUserData = () => {
-  //   let tempUser = {};
-  //   tempUser = [...users].length > 0 ? users.filter(a => a.id === album.id)[0] : {};
-  //   setUser({ ...tempUser })
-  // }
 
   const handleCardClick = (album) => {
     setAlbumCopy(albumId)
     albumClickinGrid(albumCopy)
   }
 
-  // setUserData();
+  let userName = (user && user.username) ? user.username : 'No Data for Album Owner';
+
 
   return (
     <div className="album-card" data-testid="albumcard-1">
-      <Link to="/photos" onClick={() => handleCardClick(album)}>
+      <Link to="/photos" onClick={() => handleCardClick(album)} data-testid="cardLink-1">
 
         <img
           className="album-card-image"
@@ -39,9 +32,8 @@ function AlbumCard({ album, albumClickinGrid, user }) {
         ></img>
         <div className="text-container">
           <div title={album.title}><h4 >Title: <p>{album.title ? album.title : 'No data for Album title'}</p></h4></div>
-          <div title={album.title}> <h4> Owner:<p>{user.userName ? user.userName : 'No Data for Owner'} </p></h4></div>
+          <div title={userName}> <h4> Owner:<p>{userName} </p></h4></div>
         </div>
-
 
       </Link>
     </div>
