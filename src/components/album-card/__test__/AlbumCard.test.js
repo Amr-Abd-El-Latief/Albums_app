@@ -12,11 +12,7 @@ const wrongAlbum =  albumsTestData.wrongAlbum;
 const user = usersTestData.user;
 const wrongUser = usersTestData.wrongUser;
 
-const observe = jest.fn();
 
-window.IntersectionObserver = jest.fn(function() {
-  this.observe = observe;
-});
 
 test('App should renders Album Card', () => {
   render(<Router><AlbumCard album={album} user={user} albumClickinGrid={() => { }} />
@@ -53,21 +49,6 @@ test('Album Card should contain (No data Exist Owner if Owner variable not exist
   const AlbumCardLabelElement = screen.queryAllByText(/Owner:/i)[0];
   expect(AlbumCardLabelElement).toHaveTextContent('No Data for Album Owner');
 });
-
-// testing link 
-
-
-// test('it should call albumClickinGrid  function if link clicked', () => {
-//   render(<Router><AlbumCard album={album} user={user} albumClickinGrid={() => { }} />
-//   </Router>);
-//   const AlbumCardElement = screen.getByTestId('albumcard-1');
-//   const link = screen.getByTestId('cardLink-1');
-//   const spy = jest.spyOn(AlbumCardElement, 'handleCardClick')
-//   fireEvent.click(link);
-//   expect(spy).toHaveBeenCalled()
-// })
-
-
 
 
 //testing img 

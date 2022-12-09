@@ -107,35 +107,6 @@ function App() {
 
 
   /**
-   * @Todo to be removed or enhanced and used
-   * function to get user owner of the album and add its data to the album object to use it 
-   * in the app
-   * @param {*} albums  list of albums brought from the api
-   * @param {*} users list of users brought from the api
-   * @returns 
-   */
-  // const addUserNames = (albums, users) => {
-  //   let albumsWithUsers = [...albums];
-
-  //   albumsWithUsers = albumsWithUsers.map((a) => {
-  //     let userData;
-  //     userData = users.filter(u => {
-  //       if (a.userId === u.id) {
-  //         return u;
-  //       }
-
-  //     }
-  //     );
-
-  //     return a;
-  //     //  return userData? Object.assign({...a},{albumOwner:userData}):Object.assign({...a},{albumOwner:'No Owner data'})
-  //   })
-  //   return albumsWithUsers;
-
-  // }
-
-
-  /**
    * function to handle the paginator in the album page
    * @param {*} start  start of the albums to be brought from the Api
    * @param {*} limit   limit of the albums to be brought from the Api
