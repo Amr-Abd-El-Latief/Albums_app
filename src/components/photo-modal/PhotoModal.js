@@ -31,7 +31,7 @@ function PhotoModal({ isOpen, photo, ownerData }) {
 
 
     return (
-        <div>
+        <div data-testid='photo-modal-1'>
             <Modal
                 isOpen={modalIsOpen}
                 onAfterOpen={afterOpenModal}

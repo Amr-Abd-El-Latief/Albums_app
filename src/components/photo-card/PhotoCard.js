@@ -15,16 +15,15 @@ function PhotosCard({ photo, ownerData }) {
 
   }
   return (
-    <div className="photo-card">
-      <a onClick={() => handleCardClick(photo, ownerData)}>
+    <div className="photo-card" data-testid='photocard-1'>
+      <a onClick={() => handleCardClick(photo, ownerData)} data-testid='photocard-a-1'>
         <img
       
           className="photo-card-image"
-
           style={{
             backgroundImage:
               `url(${photo?.thumbnailUrl})`,
-            width: 300,
+            width: 150,
             height: 193,
             margin: 10,
 

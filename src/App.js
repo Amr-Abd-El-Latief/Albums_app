@@ -70,7 +70,6 @@ function App() {
       try {
         const res = await UsersApi.getAll();
         const validatedRes = Array.isArray(res) ? res : [];
-        alert("users alert : " + JSON.stringify(users));
         setUsers([...validatedRes]);
         if (!Array.isArray(res)) {
           console.log(`Error!, Error in getting users from Server, status: ${JSON.stringify(res)}`)
@@ -129,10 +128,8 @@ function App() {
    */
   // const addUserNames = (albums, users) => {
   //   let albumsWithUsers = [...albums];
-  //   alert("album: " + JSON.stringify(albums) + " users : " + JSON.stringify(users))
 
   //   albumsWithUsers = albumsWithUsers.map((a) => {
-  //      alert("album: " + JSON.stringify(a) + " users : " + JSON.stringify(users))
   //     let userData;
   //     userData = users.filter(u => {
   //       if (a.userId === u.id) {
@@ -142,7 +139,6 @@ function App() {
   //     }
   //     );
 
-  //     // alert("userData  > " + JSON.stringify(userData));
   //     return a;
   //     //  return userData? Object.assign({...a},{albumOwner:userData}):Object.assign({...a},{albumOwner:'No Owner data'})
   //   })

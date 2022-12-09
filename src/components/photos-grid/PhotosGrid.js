@@ -4,9 +4,9 @@ import PhotoCard from '../photo-card/PhotoCard';
 
 function PhotosGrid({photos,ownerData}) {
   return (
-    <div className="photos-grid">
+    <div className="photos-grid" data-testid='photos-grid-1'>
 
-      <ul className="photos-grid">
+      <ul>
 
         {photos.length > 0 && photos?.map((photo) => <li key={photo.id}> <PhotoCard photo={photo}  ownerData={ownerData}/> </li>)}
       </ul>

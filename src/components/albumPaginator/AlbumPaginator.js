@@ -5,7 +5,7 @@ import React from 'react';
 
 
 function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,start,startHandler,countPerPage,countPerPageHandler}) {
-    let limit = countPerPage?countPerPage:20;
+    let limit = countPerPage?Number(countPerPage):20;
     const updateCountPerPage = (value) => {
         countPerPageHandler(value);
     }
@@ -17,7 +17,10 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
     const handlePrevClick= ()=>{
         currentPageHandler('prev');
         startHandler((countPerPage*currentPage) - countPerPage);
+        alert("start : " + start + "limit: " + limit);
         limit = start + countPerPage;
+        alert("start : " + start + "limit: " + limit);
+
         handlePaginatorClick(start,limit);
     }
 
@@ -28,14 +31,16 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
     const handleNextClick= ()=>{
         currentPageHandler('next');
         startHandler(countPerPage*currentPage+1);
+        alert("start : " + start + "limit: " + limit);
         limit = start + countPerPage;
+        alert("start : " + start + "limit: " + limit);
         handlePaginatorClick(start,limit);
     }
 
     return (
-        <div className='paginator'>
+        <div className='paginator' data-testid='paginator-1'>
             <div className='paginator-button'>
-                <button onClick={handlePrevClick} disabled={start<=0}> Prev</button>
+                <button onClick={handlePrevClick} disabled={start<=0} data-testid='prev-button-1'> Prev</button>
             </div>
             <div>
                 <select value="countPerPage" onChange={(event) => updateCountPerPage(event.target.value)}>
@@ -55,7 +60,7 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
                 </select> -- {countPerPage} --
             </div>
             <div className='paginator-button'>
-            <button onClick={handleNextClick}> Next </button>
+            <button onClick={handleNextClick} data-testid='next-button-1'> Next </button>
 
             </div>
         </div>

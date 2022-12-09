@@ -71,10 +71,10 @@ test('Album Card should contain img element when run', () => {
   expect(imageElement).toBeInTheDocument();
 });
 
- test('Album Card should contain img which have src with value in style: https://via.placeholder.com/150/00ff ', () => {
-  render(<Router><AlbumCard album={wrongAlbum} user={wrongUser} albumClickinGrid={() => { }} />
+ test('Album Card should contain img which have src with value in style: https://via.placeholder.com/150/+user.id ', () => {
+  render(<Router><AlbumCard album={wrongAlbum} user={user} albumClickinGrid={() => { }} />
   </Router>);
   const imageElement = screen.getByRole('img');
-  expect(imageElement.style.backgroundImage).toContain('https://via.placeholder.com/150/00ff');
+  expect(imageElement.style.backgroundImage).toContain(`https://via.placeholder.com/150/${user.id}`);
  });
 

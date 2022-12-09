@@ -23,7 +23,7 @@ function AlbumCard({ album, user, albumClickinGrid }) {
 
           style={{
             backgroundImage:
-              `url(https://via.placeholder.com/150/00ff)`,
+              `url(https://via.placeholder.com/150/${(user&&user.id)?user.id:1}00)`,
             width: 150,
             height: 193,
             margin: 10
