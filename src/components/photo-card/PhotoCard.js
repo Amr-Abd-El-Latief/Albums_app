@@ -1,5 +1,6 @@
 import './PhotoCard.css';
 import { useState } from 'react';
+import LazyLoad from 'react-lazy-load';
 import PhotoModal
  from '../photo-modal/PhotoModal';
 function PhotosCard({ photo, ownerData }) {
@@ -17,7 +18,8 @@ function PhotosCard({ photo, ownerData }) {
   return (
     <div className="photo-card" data-testid='photocard-1'>
       <a onClick={() => handleCardClick(photo, ownerData)} data-testid='photocard-a-1'>
-        <img
+      {/* <LazyLoad> */}
+        <img loading="lazy"
       
           className="photo-card-image"
           style={{
@@ -29,6 +31,8 @@ function PhotosCard({ photo, ownerData }) {
 
           }}
         ></img>
+         {/* </LazyLoad> */}
+        
         <div className="text-container">
           <div title={photo.title}><h4 >Photo Title: <p>{photo.title ? photo.title : 'No data for Photo title'}</p></h4></div>
         </div>

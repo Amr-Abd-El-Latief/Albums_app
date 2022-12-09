@@ -26,7 +26,6 @@ function AlbumsPage({ albums, users, showSpinner, albumClickinApp, handlePaginat
   }
 
   const startHandler = (newStart) => {
-    alert("newStart: " + newStart);
     setStart(newStart)
   }
 
@@ -40,12 +39,6 @@ function AlbumsPage({ albums, users, showSpinner, albumClickinApp, handlePaginat
       <div className='spinner-container'>{showSpinner && <AlbumsSpinner />}</div>
       {!showSpinner && <div>
         <AlbumsGrid albums={albums} users={users} albumClickinPage={albumClickpage} currentPage={currentPage} increasePage={currentPageHandler} />
-        {/* <Paginator
-        onChangepage={pageHandler}
-        postsPerPage={postsPerPage}
-        totalItemsCount={totalItemsCount}
-       
-      /> */}
         <AlbumPaginator handlePaginatorClick={handlePaginatorClickPage} currentPage={currentPage} currentPageHandler={currentPageHandler}
           start={start} startHandler={startHandler} countPerPage={countPerPageinPage} countPerPageHandler={countPerPageHandlerinPage} />
 

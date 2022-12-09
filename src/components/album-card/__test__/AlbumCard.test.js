@@ -1,6 +1,8 @@
 import { render, fireEvent, waitFor, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import AlbumCard from '../AlbumCard'
+import AlbumCard from '../AlbumCard';
+import LazyLoad from 'react-lazy-load';
+
 import * as albumsTestData from '../../unit-test-mock-data/albums'
 import * as usersTestData from '../../unit-test-mock-data/users'
 
@@ -9,6 +11,12 @@ const album = albumsTestData.album;
 const wrongAlbum =  albumsTestData.wrongAlbum;
 const user = usersTestData.user;
 const wrongUser = usersTestData.wrongUser;
+
+const observe = jest.fn();
+
+window.IntersectionObserver = jest.fn(function() {
+  this.observe = observe;
+});
 
 test('App should renders Album Card', () => {
   render(<Router><AlbumCard album={album} user={user} albumClickinGrid={() => { }} />

@@ -40,10 +40,7 @@ function App() {
         setShowSpinner(true);
         const res = await AlbumsApi.get(0, 20);
         setShowSpinner(false);
-        console.log('users : ' + JSON.stringify(users));
-
         const validatedRes = Array.isArray(res) ? res : [];
-        console.log('Albums : ' + JSON.stringify(validatedRes));
         setAlbums([...validatedRes]);
         if (!Array.isArray(res)) {
           console.log(`Error!, Error in getting Albums from Server, status: ${JSON.stringify(res)}`)
@@ -146,9 +143,7 @@ function App() {
   const handlePaginator = async (start, limit) => {
     try {
       setShowSpinner(true);
-      // alert("App js  start : " + start + "limit: " + limit);
       const res = await AlbumsApi.get(start, limit);
-
       const validatedRes = Array.isArray(res) ? res : [];
       setAlbums([...validatedRes]);
       setShowSpinner(false);
@@ -239,7 +234,7 @@ function App() {
 
     <BrowserRouter>
 
-      <div className="App">
+      <div className="App" data-testid='app-1'>
 
         <Routes>
           <Route path="/" element={<AlbumsPage albums={albums} users={users} showSpinner={showSpinner}

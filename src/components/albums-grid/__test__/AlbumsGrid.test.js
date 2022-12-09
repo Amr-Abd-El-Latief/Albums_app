@@ -7,7 +7,15 @@ import * as usersTestData from '../../unit-test-mock-data/users'
 const users = usersTestData.users;   // three users data
 const albums = albumsTestData.albums;  // three albums data
 
+
+
+
 test('App should renders Album Grid', () => {
+  const observe = jest.fn();
+
+window.IntersectionObserver = jest.fn(function() {
+  this.observe = observe;
+});
     render(<Router><AlbumGrid albums={albums} users={users} albumClickinPage={() => { }} />
     </Router>);
     const AlbumGridElement = screen.getByTestId('album-grid-1');

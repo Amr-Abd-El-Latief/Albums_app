@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 import './AlbumCard.css';
 
 function AlbumCard({ album, user, albumClickinGrid }) {
@@ -17,8 +18,8 @@ function AlbumCard({ album, user, albumClickinGrid }) {
   return (
     <div className="album-card" data-testid="albumcard-1">
       <Link to="/photos" onClick={() => handleCardClick(album)} data-testid="cardLink-1">
-
-        <img
+      {/* <LazyLoad > */}
+        <img loading="lazy"
           className="album-card-image"
 
           style={{
@@ -30,7 +31,8 @@ function AlbumCard({ album, user, albumClickinGrid }) {
 
           }}
         ></img>
-        <div className="text-container">
+        {/* </LazyLoad> */}
+        <div className="text-container" >
           <div title={album.title}><h4 >Title: <p>{album.title ? album.title : 'No data for Album title'}</p></h4></div>
           <div title={userName}> <h4> Owner:<p>{userName} </p></h4></div>
         </div>

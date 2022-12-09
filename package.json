@@ -11,6 +11,7 @@
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.2.0",
     "react-js-pagination": "^3.0.3",
+    "react-lazy-load": "^4.0.1",
     "react-modal": "^3.16.1",
     "react-scripts": "5.0.1",
     "sass": "^1.56.1",

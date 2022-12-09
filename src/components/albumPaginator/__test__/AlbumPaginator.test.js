@@ -26,7 +26,7 @@ test('AlbumPaginator should call handlePaginatorClick when next button is clicke
      start='1'  startHandler={() => { }}  countPerPage='20' countPerPageHandler={() => { }} />);
     const nextButton = screen.getByTestId('next-button-1');
     fireEvent.click(nextButton);
-     expect(spyhandlePaginatorClick).toHaveBeenCalledWith(1,20);
+     expect(spyhandlePaginatorClick).toHaveBeenCalledWith('1',21);
   });
 
 
@@ -38,7 +38,9 @@ test('AlbumPaginator should call handlePaginatorClick when next button is clicke
     start='21'  startHandler={startHandler}  countPerPage='20' countPerPageHandler={() => { }} />);
    const nextButton = screen.getByTestId('prev-button-1');
    fireEvent.click(nextButton);
-    expect(spyhandlePaginatorClick).toHaveBeenCalledWith(21,40);
+    expect(spyhandlePaginatorClick).toHaveBeenCalledWith('21',41);
  });
+
+
 
 
