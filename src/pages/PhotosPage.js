@@ -26,7 +26,7 @@ function PhotosPage({ photos, ownerData, showSpinner, handlePaginatorClickinApp,
   }
 
   return (
-    <div className="photos-grid-page">
+    <div className="photos-grid-page" data-testid='photos-page-1'>
       <Header />
       <div className='photos-page-title'>
         <div>

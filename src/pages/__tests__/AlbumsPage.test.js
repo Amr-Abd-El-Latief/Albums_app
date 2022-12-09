@@ -10,8 +10,6 @@ const albums = albumsTestData.albums;  // three albums data
 
 
 
-//albums, users, showSpinner, albumClickinApp, handlePaginatorClickinApp, currentPage, 
-//currentPageHandlerinApp, countPerPageinPage, countPerPageHandlerinApp 
 test('App should renders AlbumsPage', () => {
   render(<Router><AlbumsPage  albums={albums} users={users} albumClickinApp={() => { }} handlePaginatorClickinApp={() => { }}  currentPage='1'   currentPageHandler={() => { }} 
   countPerPageinPage='20' countPerPageHandlerinApp={() => { }} /></Router>);
