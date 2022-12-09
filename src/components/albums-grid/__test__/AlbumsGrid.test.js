@@ -8,8 +8,6 @@ const users = usersTestData.users;   // three users data
 const albums = albumsTestData.albums;  // three albums data
 
 
-
-
 test('App should renders Album Grid', () => {
   const observe = jest.fn();
 

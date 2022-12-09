@@ -34,7 +34,7 @@ function AlbumsPage({ albums, users, showSpinner, albumClickinApp, handlePaginat
   }
 
   return (
-    <div className="albums-grid-page">
+    <div className="albums-grid-page" data-testid='albums-page-1'>
       <Header />
       <div className='spinner-container'>{showSpinner && <AlbumsSpinner />}</div>
       {!showSpinner && <div>

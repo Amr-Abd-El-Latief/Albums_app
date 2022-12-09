@@ -3,7 +3,6 @@ import './AlbumPaginator.css';
 import React from 'react';
 
 
-
 function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,start,startHandler,countPerPage,countPerPageHandler}) {
     let limit = countPerPage?Number(countPerPage):20;
     const updateCountPerPage = (value) => {
