@@ -26,6 +26,7 @@ function AlbumsPage({ albums, users, showSpinner, albumClickinApp, handlePaginat
   }
 
   const startHandler = (newStart) => {
+    alert("newStart: " + newStart);
     setStart(newStart)
   }
 

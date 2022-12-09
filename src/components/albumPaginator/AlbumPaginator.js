@@ -16,11 +16,8 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
      */
     const handlePrevClick= ()=>{
         currentPageHandler('prev');
-        startHandler((countPerPage*currentPage) - countPerPage);
-        alert("start : " + start + "limit: " + limit);
-        limit = start + countPerPage;
-        alert("start : " + start + "limit: " + limit);
-
+        startHandler((countPerPage*(currentPage-2)));
+        limit = Number(start) + Number(countPerPage);
         handlePaginatorClick(start,limit);
     }
 
@@ -31,9 +28,7 @@ function AlbumPaginator({handlePaginatorClick,currentPage,currentPageHandler,sta
     const handleNextClick= ()=>{
         currentPageHandler('next');
         startHandler(countPerPage*currentPage+1);
-        alert("start : " + start + "limit: " + limit);
-        limit = start + countPerPage;
-        alert("start : " + start + "limit: " + limit);
+        limit = Number(start) + Number(countPerPage);
         handlePaginatorClick(start,limit);
     }
 

@@ -40,17 +40,11 @@ function App() {
         setShowSpinner(true);
         const res = await AlbumsApi.get(0, 20);
         setShowSpinner(false);
-        console.log('users : ' +JSON.stringify(users));
+        console.log('users : ' + JSON.stringify(users));
 
         const validatedRes = Array.isArray(res) ? res : [];
-        console.log('Albums : ' +JSON.stringify(validatedRes));
-        // if(users.length>0){
+        console.log('Albums : ' + JSON.stringify(validatedRes));
         setAlbums([...validatedRes]);
-        // }else{
-        //   await getUsers();
-        //   setAlbums(addUserNames([...validatedRes], users));
-
-        // }
         if (!Array.isArray(res)) {
           console.log(`Error!, Error in getting Albums from Server, status: ${JSON.stringify(res)}`)
           throw new Error(`Error! status: ${res.status}`);
@@ -58,7 +52,7 @@ function App() {
         }
 
       } catch (err) {
-        console.log(err);
+        errorHandler(err);
       }
 
     };
@@ -74,18 +68,15 @@ function App() {
         if (!Array.isArray(res)) {
           console.log(`Error!, Error in getting users from Server, status: ${JSON.stringify(res)}`)
           throw new Error(`Error! status: ${res.status}`);
-  
+
         }
       } catch (err) {
-        console.log(err);
+        errorHandler(err);
       }
-    
+
     }
     getUsers()
   }, [])
-
-
-
 
 
   /**
@@ -97,7 +88,7 @@ function App() {
     if (type === 'next') {
       setCurrentPage((prev) => prev + 1);
     } else {
-      setCurrentPage((prev) => (prev - 1) < 0 ? 0 : prev - 1);
+      setCurrentPage((prev) => (prev - 1) <= 0 ? 0 : prev - 1);
 
     }
   }
@@ -155,6 +146,7 @@ function App() {
   const handlePaginator = async (start, limit) => {
     try {
       setShowSpinner(true);
+      // alert("App js  start : " + start + "limit: " + limit);
       const res = await AlbumsApi.get(start, limit);
 
       const validatedRes = Array.isArray(res) ? res : [];
@@ -209,11 +201,10 @@ function App() {
       let ownerName = users.filter(item => item.id === albumOwnerid)[0]['username'];
 
       setOWnerData({ albumOwner: ownerName, albumTitle: albumName, albumId: albumId });
-      // console.log("from outside Albums : " + JSON.stringify(albums))
-      // if (!Array.isArray(res)) {
-      //   throw new Error(`Error! status: ${res.status}`);
+      if (!Array.isArray(res)) {
+        throw new Error(`Error! status: ${res.status}`);
 
-      // }
+      }
 
     } catch (err) {
       console.log(err);
@@ -230,6 +221,19 @@ function App() {
     setCountPerPagePhotos(count)
   }
 
+/**
+ * function that handles the important types of error, and show them to user, else it log the error
+ * @param {*} e  error object
+ */
+  const errorHandler = (e) => {
+    if (e.code == 'ECONNABORTED') { // tel user about important errors
+      console.log('you can now handle time out here')
+      alert('Error:Request Time out.  details of error:' + JSON.stringify(e))
+    } else {
+      console.error(e);
+    }
+
+  }
 
   return (
 

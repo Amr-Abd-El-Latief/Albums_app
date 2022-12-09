@@ -22,7 +22,7 @@ function PhotoModal({ isOpen, photo, ownerData }) {
     // }
 
     function afterOpenModal() {
-        
+
     }
 
     function closeModal() {
@@ -39,9 +39,12 @@ function PhotoModal({ isOpen, photo, ownerData }) {
                 style={customStyles}
                 contentLabel="Example Modal"
             ><div className='buttons-container'>
-                    <a  className='close-button' onClick={closeModal}>X</a>
+                    <a className='close-button' onClick={closeModal}>X</a>
                 </div>
                 <div className="modal-card">
+                    <div className="text-container">
+                        <div title={photo.title}><b>Photo Title: {photo.title}</b></div>
+                    </div>
                     <img
 
                         className="modal-card-image"
@@ -56,7 +59,6 @@ function PhotoModal({ isOpen, photo, ownerData }) {
                         }}
                     ></img>
                     <div className="text-container">
-                        <div title={photo.title}><b>Photo Title: {photo.title}</b></div>
                         <div title={ownerData.albumOwner}> <b>Photo Owner: {ownerData.albumOwner}</b></div>
                         <div title={ownerData.albumTitle}> <b>Album Title: {ownerData.albumTitle}</b></div>
                     </div>
